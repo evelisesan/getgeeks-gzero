@@ -24,17 +24,7 @@ User Should Be Registered
 	# Wait For Elements State		css=h1 >> text=Parabéns!	visible		5
 	Wait For Elements State		${expected_text}	visible		5
 
-Alert Span Should Be
-	[Arguments]			${expected_alert}
-	Wait For Elements State		css=span[class=error] >> text=${expected_alert}		
-	...							visible		5
 
-Alert Spans Should Be
-	[Arguments]			${expected_alerts}
-
-	@{got_alerts}		Create List
-
-	${spans}			Get Elements		xpath=//span[@class="error"]
 
 	FOR		${span}		IN		@{spans}
 		${text}				Get Text		${span}
