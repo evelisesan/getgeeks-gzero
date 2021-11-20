@@ -26,9 +26,4 @@ User Should Be Registered
 
 
 
-	FOR		${span}		IN		@{spans}
-		${text}				Get Text		${span}
-		Append To List		${got_alerts}	${text}
-	END
-
-	Lists Should Be Equal		${expected_alerts}		${got_alerts}
+	

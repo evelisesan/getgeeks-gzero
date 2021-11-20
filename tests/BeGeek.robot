@@ -5,15 +5,19 @@ Resource        ${EXECDIR}/resources/Base.robot
 
 
 Test Setup      Start Session
-Test Teardown   Finish Session
+Test Teardown   After Test
 
 *Test Cases*
 
 Be a Geek
+    [Tags]      smoke
 
-    ${user}     Factory User Be Geek
+    ${user}     Factory User    be_geek
+    
+    Do Login    ${user}
 
-    Go To Login Page
-    Fill Credentials            ${user}
-    Submit Credentials
-    User Should Be Logged In    ${user}
+    Go To Geek Form     
+    Fill Geek Form      ${user}[geek_profile]
+    Submit Geek Form
+    
+    Geek Form Should Be Success

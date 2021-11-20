@@ -19,6 +19,7 @@ Fill Credentials
 Submit Credentials
     Click               css=.submit-button >> text=Entrar     
 
+
 User Should Be Logged In
     [Arguments]         ${user}
 
